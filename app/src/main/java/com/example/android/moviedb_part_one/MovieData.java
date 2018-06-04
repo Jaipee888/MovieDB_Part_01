@@ -1,18 +1,17 @@
 package com.example.android.moviedb_part_one;
 
+import android.media.Image;
+
 public class MovieData {
 
     private String originalTitle;
-    private String  imagePoster;
-    private String plotSynopsis;
-    private String userRating;
+    private Image imagePoster;
 
-    public MovieData(String title, String imgPoster, String plot, String uRating){
+    public MovieData(String title, Image imgP){
 
         originalTitle = title;
-        imagePoster = imgPoster;
-        plotSynopsis = plot;
-        userRating = uRating;
+        imagePoster = imgP;
+
     }
 
     public String getOriginalTitle() {
@@ -23,27 +22,11 @@ public class MovieData {
         this.originalTitle = originalTitle;
     }
 
-    public String getImagePoster() {
+    public Image getImagePoster() {
         return imagePoster;
     }
 
-    public void setImagePoster(String imagePoster) {
+    public void setImagePoster(Image imagePoster) {
         this.imagePoster = imagePoster;
-    }
-
-    public String getPlotSynopsis() {
-        return plotSynopsis;
-    }
-
-    public void setPlotSynopsis(String plotSynopsis) {
-        this.plotSynopsis = plotSynopsis;
-    }
-
-    public String getUserRating() {
-        return userRating;
-    }
-
-    public void setUserRating(String userRating) {
-        this.userRating = userRating;
     }
 }
