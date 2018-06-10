@@ -5,28 +5,32 @@ import android.media.Image;
 public class MovieData {
 
     private String originalTitle;
-    private Image imagePoster;
+    private String imagePoster;
+    private String movieId;
 
-    public MovieData(String title, Image imgP){
+    public String getMovieId() {
+        return movieId;
+    }
 
-        originalTitle = title;
-        imagePoster = imgP;
-
+    public void setMovieId(String movieId) {
+        this.movieId = movieId;
     }
 
     public String getOriginalTitle() {
+
         return originalTitle;
     }
 
     public void setOriginalTitle(String originalTitle) {
+
         this.originalTitle = originalTitle;
     }
 
-    public Image getImagePoster() {
+    public String getImagePoster() {
         return imagePoster;
     }
 
-    public void setImagePoster(Image imagePoster) {
+    public void setImagePoster(String imagePoster) {
         this.imagePoster = imagePoster;
     }
 }

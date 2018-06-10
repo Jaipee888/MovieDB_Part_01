@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MovieDB_part_one</string>
+    <string name="image_name">Image Name</string>
+    <string name="detail_imageview">Detail_Image_View</string>
 </resources>
