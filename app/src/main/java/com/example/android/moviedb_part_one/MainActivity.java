@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         new DownloadTask().execute(url);
 
 
-
     }
 
     public class DownloadTask extends AsyncTask<String, Void, Integer> {
