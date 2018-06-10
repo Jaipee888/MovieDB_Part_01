@@ -17,6 +17,8 @@ import okhttp3.Response;
 
 public class DetailActivity extends AppCompatActivity {
 
+   public static final String EXTRA_MOVIEID = "MovieId";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -24,7 +26,12 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.detail_activity);
 
 
+        Intent movieIntent = getIntent();
+        String movieUrl = movieIntent.getExtras().getString(EXTRA_MOVIEID);
 
+        // Populate TextViews of Movie Details.
+        TextView movieDetailTextView = (TextView) findViewById(R.id.detail_textView);
+        movieDetailTextView.setText(movieUrl);
 
 
 

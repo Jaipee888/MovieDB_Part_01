@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
         String url =
-                "http://api.themoviedb.org/3/movie/popular?api_key=[ENTER_YOUR_API_KEY_HERE]";
+                "http://api.themoviedb.org/3/movie/popular?api_key=8b6bf3486420893634f897e59f3f5edb";
 
         new DownloadTask().execute(url);
 
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
                         String detailUrl = item.getMovieId();
-                        intent.setData(Uri.parse(detailUrl));
+                        intent.putExtra(DetailActivity.EXTRA_MOVIEID, detailUrl);
 
                         startActivity(intent);
 
