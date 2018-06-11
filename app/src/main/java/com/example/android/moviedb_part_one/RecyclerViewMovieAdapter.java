@@ -35,12 +35,14 @@ public class RecyclerViewMovieAdapter extends RecyclerView.Adapter<RecyclerViewM
 
             protected ImageView imageView;
             protected TextView textView;
+           // protected TextView detailTextView;
 
             public CustomViewHolder(View view) {
 
                 super(view);
                 this.imageView = (ImageView) view.findViewById(R.id.thumbnail);
                 this.textView = (TextView) view.findViewById(R.id.title);
+               // this.detailTextView = (TextView) view.findViewById(R.id.detail_textView);
 
             }
 
@@ -87,6 +89,7 @@ public class RecyclerViewMovieAdapter extends RecyclerView.Adapter<RecyclerViewM
 
         customViewHolder.imageView.setOnClickListener(listener);
         customViewHolder.textView.setOnClickListener(listener);
+
         // Set Text view title.
         customViewHolder.textView.setText(Html.fromHtml(movieItem.getOriginalTitle()));
 

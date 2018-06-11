@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
         String url =
-                "http://api.themoviedb.org/3/movie/popular?api_key=8b6bf3486420893634f897e59f3f5edb";
+                "http://api.themoviedb.org/3/movie/popular?api_key=";
 
         new DownloadTask().execute(url);
 
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 MovieData item = new MovieData();
                 item.setImagePoster("http://image.tmdb.org/t/p/w500/" + post.getString("poster_path"));
                 item.setOriginalTitle(post.getString("title"));
-                item.setMovieId("https://api.themoviedb.org/3/movie/" +post.getString("id") + "?api_key=8b6bf3486420893634f897e59f3f5edb");
+                item.setMovieId("https://api.themoviedb.org/3/movie/" +post.getString("id") + "?api_key=");
 
                 MovieList.add(item);
             }
