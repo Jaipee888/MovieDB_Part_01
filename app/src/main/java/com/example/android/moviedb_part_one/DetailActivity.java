@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 
 public class DetailActivity extends AppCompatActivity {
 
-  
+
 
    private TextView overViewText;
    private ImageView thumbnailImage;

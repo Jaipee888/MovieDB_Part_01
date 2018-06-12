@@ -139,9 +139,9 @@ public class MainActivity extends AppCompatActivity {
                 item.setOriginalTitle(post.getString("title"));
                 item.setMovieId("https://api.themoviedb.org/3/movie/" +post.getString("id") + "?api_key=8b6bf3486420893634f897e59f3f5edb");
                 item.setPosterThumbnail("http://image.tmdb.org/t/p/w500/" + post.getString("backdrop_path"));
-                item.setUserRating("vote_average");
-                item.setReleaseDate("release_date");
-                item.setOverView("overview");
+                item.setUserRating(post.getString("vote_average"));
+                item.setReleaseDate(post.getString("release_date"));
+                item.setOverView(post.getString("overview"));
 
                 MovieList.add(item);
             }
