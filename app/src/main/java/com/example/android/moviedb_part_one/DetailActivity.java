@@ -12,13 +12,7 @@ import com.squareup.picasso.Picasso;
 
 public class DetailActivity extends AppCompatActivity {
 
-   /* private static final String TAG = "MovieDBData";
-    public static final String EXTRA_MOVIEID = "MovieId";
-    private ProgressBar DetailprogressBar;
-    private RecyclerViewMovieAdapter detailAdapter;
-    private RecyclerView dRecyclerView;
-    private List<MovieData> MovieList;
-    protected TextView overViewText;*/
+  
 
    private TextView overViewText;
    private ImageView thumbnailImage;
