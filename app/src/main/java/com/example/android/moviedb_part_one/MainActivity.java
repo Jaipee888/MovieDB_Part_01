@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
         String url =
-                "http://api.themoviedb.org/3/movie/popular?api_key=";
+                "http://api.themoviedb.org/3/movie/popular?api_key=8b6bf3486420893634f897e59f3f5edb";
 
         new DownloadTask().execute(url);
 
@@ -111,7 +111,10 @@ public class MainActivity extends AppCompatActivity {
 
                         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
                         String detailUrl = item.getMovieId();
-                        intent.putExtra(DetailActivity.EXTRA_MOVIEID, detailUrl);
+                        intent.putExtra("backdrop_path",item.getPosterThumbnail());
+                        intent.putExtra("overview",item.getOverView());
+                        intent.putExtra("release_date",item.getReleaseDate());
+                        intent.putExtra("vote_average",item.getUserRating());
 
                         startActivity(intent);
 
@@ -134,7 +137,11 @@ public class MainActivity extends AppCompatActivity {
                 MovieData item = new MovieData();
                 item.setImagePoster("http://image.tmdb.org/t/p/w500/" + post.getString("poster_path"));
                 item.setOriginalTitle(post.getString("title"));
-                item.setMovieId("https://api.themoviedb.org/3/movie/" +post.getString("id") + "?api_key=");
+                item.setMovieId("https://api.themoviedb.org/3/movie/" +post.getString("id") + "?api_key=8b6bf3486420893634f897e59f3f5edb");
+                item.setPosterThumbnail("http://image.tmdb.org/t/p/w500/" + post.getString("backdrop_path"));
+                item.setUserRating("vote_average");
+                item.setReleaseDate("release_date");
+                item.setOverView("overview");
 
                 MovieList.add(item);
             }
