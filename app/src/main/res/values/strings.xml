@@ -2,4 +2,14 @@
     <string name="app_name">MovieDB_part_one</string>
     <string name="image_name">Image Name</string>
     <string name="detail_imageview">Detail_Image_View</string>
+    <string name="overviewText_name">Overview:</string>
+    <string name="releaseText_name">Release Date:</string>
+    <string name="voteText_name">Vote:</string>
+    <string name="detail_Panel_name">Movie Detail</string>
+    <string name="actionbar_spinner">Spinner</string>
+    <string name="main_app_name">JFlix</string>
+    <string-array name="sort_by">
+        <item>Popularity</item>
+        <item>Highest Rated</item>
+    </string-array>
 </resources>

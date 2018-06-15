@@ -9,10 +9,15 @@
     android:padding="12dp"
     tools:context="com.example.android.moviedb_part_one.MainActivity">
 
+    <include
+        layout="@layout/toolbar_main"
+        android:id="@+id/toolbar"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"/>
 
     <ProgressBar
         android:id="@+id/progress_bar"

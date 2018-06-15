@@ -1,33 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
 
 
-    <ImageView
-        android:id="@+id/detailphoto"
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:contentDescription="@string/detail_imageview"
-        />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/detail_textView"
-        android:layout_width="match_parent"
-        android:layout_height="150dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:id="@+id/releaseDate"/>
+                <ImageView
+                    android:id="@+id/detailphoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/detail_imageview" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:id="@+id/votingAverage"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:id="@+id/headlineDetailText"
+                    android:layout_below="@+id/detailphoto"
+                    android:text="@string/overviewText_name"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/detail_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_below="@+id/headlineDetailText"
+                    android:fontFamily="sans-serif"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="20dp"
+                    android:id="@+id/headlineReleaseText"
+                    android:layout_below="@+id/detail_textView"
+                    android:text="@string/releaseText_name"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:fontFamily="sans-serif"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_below="@+id/headlineReleaseText"
+                    android:fontFamily="sans-serif"
+                    android:textSize="14sp"
+                    android:id="@+id/releaseDate"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="20dp"
+                    android:id="@+id/headlineVote"
+                    android:layout_below="@+id/releaseDate"
+                    android:text="@string/voteText_name"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_below="@id/headlineVote"
+                    android:fontFamily="sans-serif"
+                    android:textSize="14sp"
+                    android:id="@+id/votingAverage"/>
+            </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
 
 
-</LinearLayout>
+

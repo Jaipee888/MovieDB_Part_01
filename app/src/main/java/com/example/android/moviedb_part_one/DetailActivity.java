@@ -2,30 +2,28 @@ package com.example.android.moviedb_part_one;
 
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
-
-
 public class DetailActivity extends AppCompatActivity {
-
-
 
    private TextView overViewText;
    private ImageView thumbnailImage;
    private TextView vote;
    private TextView release;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_activity);
+
+        // Action Bar sets the return to Home Button in Movie Detail Activity.
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         String overViewSummary = getIntent().getStringExtra("overview");
         String image = getIntent().getStringExtra("backdrop_path");
