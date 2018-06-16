@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
 
      private Spinner spinner;
-     String originalLink = "http://api.themoviedb.org/3/movie/popular?api_key=8b6bf3486420893634f897e59f3f5edb";
-     String popularityLink = "https://api.themoviedb.org/3/discover/movie?api_key=8b6bf3486420893634f897e59f3f5edb&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
-     String voteLink="https://api.themoviedb.org/3/discover/movie?api_key=8b6bf3486420893634f897e59f3f5edb&language=en-US&sort_by=vote_count.desc&include_adult=false&include_video=false&page=1";
+     String originalLink = "http://api.themoviedb.org/3/movie/popular?api_key=[ENTER_API_KEY]";
+     String popularityLink = "https://api.themoviedb.org/3/discover/movie?api_key=[ENTER_API_KEY]&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
+     String voteLink="https://api.themoviedb.org/3/discover/movie?api_key=[ENTER_API_KEY]&language=en-US&sort_by=vote_count.desc&include_adult=false&include_video=false&page=1";
 
 
 
@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
                 MovieData item = new MovieData();
                 item.setImagePoster("http://image.tmdb.org/t/p/w500/" + post.getString("poster_path"));
                 item.setOriginalTitle(post.getString("title"));
-                item.setMovieId("https://api.themoviedb.org/3/movie/" +post.getString("id") + "?api_key=8b6bf3486420893634f897e59f3f5edb");
+                item.setMovieId("https://api.themoviedb.org/3/movie/" +post.getString("id") + "?api_key=[ENTER_API_KEY]");
                 item.setPosterThumbnail("http://image.tmdb.org/t/p/w500/" + post.getString("backdrop_path"));
                 item.setUserRating(post.getString("vote_average"));
                 item.setReleaseDate(post.getString("release_date"));
