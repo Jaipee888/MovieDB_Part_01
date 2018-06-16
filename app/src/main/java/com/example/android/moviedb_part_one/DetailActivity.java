@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
+
 import com.squareup.picasso.Picasso;
 
 public class DetailActivity extends AppCompatActivity {
@@ -22,8 +24,11 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.detail_activity);
 
         // Action Bar sets the return to Home Button in Movie Detail Activity.
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setDisplayHomeAsUpEnabled(true);
+
+        Toolbar detailToolbar = (Toolbar) findViewById(R.id.toolbar_detail);
+        setSupportActionBar(detailToolbar);
 
         String overViewSummary = getIntent().getStringExtra("overview");
         String image = getIntent().getStringExtra("backdrop_path");

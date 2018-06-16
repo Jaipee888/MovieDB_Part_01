@@ -12,8 +12,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <include
+                    layout="@layout/toolbar_detail"
+                    android:id="@+id/toolbar_detail"/>
+
                 <ImageView
                     android:id="@+id/detailphoto"
+                    android:layout_below="@+id/toolbar_detail"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:contentDescription="@string/detail_imageview" />

@@ -40,9 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
      private Spinner spinner;
      String originalLink = "http://api.themoviedb.org/3/movie/popular?api_key=8b6bf3486420893634f897e59f3f5edb";
-     String popularityLink = "https://api.themoviedb.org/3/discover/movie?api_key=8b6bf3486420893634f897e59f3f5edb&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1";
-     String voteLink="https://api.themoviedb.org/3/discover/movie?api_key=8b6bf3486420893634f897e59f3f5edb&language=en-US&sort_by=vote_count.asc&include_adult=false&include_video=false&page=1";
-     String[] paths = new String[]{originalLink,popularityLink,voteLink};
+     String popularityLink = "https://api.themoviedb.org/3/discover/movie?api_key=8b6bf3486420893634f897e59f3f5edb&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1";
+     String voteLink="https://api.themoviedb.org/3/discover/movie?api_key=8b6bf3486420893634f897e59f3f5edb&language=en-US&sort_by=vote_count.desc&include_adult=false&include_video=false&page=1";
 
 
 
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
        // spinner.setOnItemSelectedListener(this);
 
         spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.default_sort,android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.default_sort, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(listener);
@@ -79,7 +78,20 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                switch (position){
 
+                    case 1:
+                        new DownloadTask().execute(popularityLink);
+                        break;
+                    case 2:
+                        new DownloadTask().execute(voteLink);
+                        break;
+
+                    default:
+                        new DownloadTask().execute(originalLink);
+                        break;
+
+                }
 
         }
 
