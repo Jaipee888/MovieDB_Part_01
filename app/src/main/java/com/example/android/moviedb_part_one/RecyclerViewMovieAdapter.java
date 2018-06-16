@@ -91,7 +91,7 @@ public class RecyclerViewMovieAdapter extends RecyclerView.Adapter<RecyclerViewM
         customViewHolder.textView.setOnClickListener(listener);
 
         // Set Text view title.
-        customViewHolder.textView.setText(Html.fromHtml(movieItem.getOriginalTitle()));
+        //customViewHolder.textView.setText(Html.fromHtml(movieItem.getOriginalTitle()));
 
     }
 

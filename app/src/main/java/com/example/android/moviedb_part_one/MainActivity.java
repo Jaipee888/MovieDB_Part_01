@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
                         intent.putExtra("overview",item.getOverView());
                         intent.putExtra("release_date",item.getReleaseDate());
                         intent.putExtra("vote_average",item.getUserRating());
+                        intent.putExtra("title",item.getOriginalTitle());
 
                         startActivity(intent);
 
