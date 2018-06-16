@@ -8,8 +8,10 @@
     <string name="detail_Panel_name">Movie Detail</string>
     <string name="actionbar_spinner">Spinner</string>
     <string name="main_app_name">JFlix</string>
-    <string-array name="sort_by">
+    <string-array name="default_sort">
+        <item>Sort by</item>
         <item>Popularity</item>
         <item>Highest Rated</item>
     </string-array>
+
 </resources>

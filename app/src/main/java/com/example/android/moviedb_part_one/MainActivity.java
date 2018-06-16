@@ -8,7 +8,11 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -36,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
      private Spinner spinner;
      String originalLink = "http://api.themoviedb.org/3/movie/popular?api_key=8b6bf3486420893634f897e59f3f5edb";
-     String popularityLink;
-     String voteLink;
-     final String[] paths = {originalLink,popularityLink,voteLink};
+     String popularityLink = "https://api.themoviedb.org/3/discover/movie?api_key=8b6bf3486420893634f897e59f3f5edb&language=en-US&sort_by=popularity.asc&include_adult=false&include_video=false&page=1";
+     String voteLink="https://api.themoviedb.org/3/discover/movie?api_key=8b6bf3486420893634f897e59f3f5edb&language=en-US&sort_by=vote_count.asc&include_adult=false&include_video=false&page=1";
+     String[] paths = new String[]{originalLink,popularityLink,voteLink};
 
 
 
@@ -55,13 +59,40 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new GridLayoutManager(this,numberOfColumns));
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
-        String url =
-                "http://api.themoviedb.org/3/movie/popular?api_key=8b6bf3486420893634f897e59f3f5edb";
 
-        new DownloadTask().execute(url);
+               // String url ="http://api.themoviedb.org/3/movie/popular?api_key=8b6bf3486420893634f897e59f3f5edb";
+
+       // new DownloadTask().execute(url);
+
+       // spinner.setOnItemSelectedListener(this);
+
+        spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.default_sort,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(listener);
 
 
     }
+
+    AdapterView.OnItemSelectedListener listener = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    };
+
+
+
+
+
 
     public class DownloadTask extends AsyncTask<String, Void, Integer> {
 
