@@ -8,9 +8,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <include
                     layout="@layout/toolbar_detail"
@@ -18,16 +19,27 @@
 
                 <ImageView
                     android:id="@+id/detailphoto"
-                    android:layout_below="@+id/toolbar_detail"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:layout_below="@+id/toolbar_detail"
                     android:contentDescription="@string/detail_imageview" />
+
+            </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingTop="300dp"
                     android:id="@+id/headlineTitleText"
-                    android:layout_below="@+id/detailphoto"
                     android:text="@string/TitleText_Name"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
@@ -35,6 +47,8 @@
                     android:textColor="#000000"
                     android:fontFamily="sans-serif"
                     android:textSize="18sp" />
+                    <!--android:layout_below="@+id/detailphoto"-->
+
 
                 <TextView
                     android:id="@+id/detail_TitleTextView"
@@ -117,7 +131,13 @@
                     android:fontFamily="sans-serif"
                     android:textSize="14sp"
                     android:id="@+id/votingAverage"/>
+
+
             </RelativeLayout>
+
+        </ScrollView>
+
+
 
     </android.support.v7.widget.CardView>
 

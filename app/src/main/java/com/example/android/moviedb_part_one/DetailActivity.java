@@ -26,9 +26,12 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detail_activity);
 
-        // Action Bar sets the return to Home Button in Movie Detail Activity.
-         //ActionBar actionBar = getSupportActionBar();
-         //actionBar.setDisplayHomeAsUpEnabled(true);
+        //Action Bar sets the return to Home Button in Movie Detail Activity.
+       /*  ActionBar actionBar = getSupportActionBar();
+
+         if(actionBar != null) {
+             actionBar.setDisplayHomeAsUpEnabled(true);
+             }*/
 
         Toolbar detailToolbar = (Toolbar) findViewById(R.id.toolbar_detail);
         setSupportActionBar(detailToolbar);
